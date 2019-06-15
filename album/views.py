@@ -19,10 +19,10 @@ def first_view(request):
 def base(request):
    return render(request,'base.html')
     
-'''def category(request):
+def category(request):
     category_list = Category.objects.all()
     context = {'object_list': category_list}
-    return render(request, 'album/category_list.html', context)'''
+    return render(request, 'album/category_list.html', context)
 
 def category_detail(request, category_id):
     category = Category.objects.get(id=category_id)

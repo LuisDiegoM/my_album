@@ -19,8 +19,9 @@ class Photo(models.Model):
     comment = models.TextField(max_length=200, blank=True)
     def __str__(self):
         return self.title
-    """def get_absolute_url(self):
-        return reverse('photo-list')"""
+    def get_absolute_url(self):
+        return reverse('photo-list')
+        
     @receiver(post_delete, sender=photo)
     def photo_delete(sender, instance, **kwargs):
         """Borra los ficheros de las fotos que se eliminen."""
